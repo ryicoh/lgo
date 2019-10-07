@@ -12,3 +12,10 @@ services:
       - type: "bind"
         source: ./../../examples
         target: /examples
+  mysql:
+    image: mysql:5.7
+    # To use a different port of host, change the first 8888.
+    ports:
+      - "13306:3306"
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
